@@ -30,9 +30,15 @@ angular.module('directory', ['ionic', 'directory.services', 'directory.controlle
                 url: '/employee/:employeeId/reports',
                 templateUrl: 'templates/employee-reports.html',
                 controller: 'EmployeeReportsCtrl'
+            })
+
+            .state('fruit-index', {
+                url: '/fruits',
+                templateUrl: 'templates/fruit-index.html',
+                controller: 'FruitIndexCtrl'
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/employees');
+        $urlRouterProvider.otherwise('/fruits');
 
     });

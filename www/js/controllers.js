@@ -35,4 +35,30 @@ angular.module('directory.controllers', [])
         EmployeeService.findByManager($stateParams.employeeId).then(function(employees) {
             $scope.employees = employees;
         });
-    });
+    })
+
+    .controller('FruitIndexCtrl', function ($scope, FruitService) {
+        /*
+        $scope.searchKey = "";
+
+        $scope.clearSearch = function () {
+            $scope.searchKey = "";
+            findAllEmployees();
+        }
+
+        $scope.search = function () {
+            EmployeeService.findByName($scope.searchKey).then(function (employees) {
+                $scope.employees = employees;
+            });
+        }
+        */
+
+        var findAllFruits = function() {
+            FruitService.findAll().then(function (aoFruits) {
+                $scope.fruits = aoFruits;
+            });
+        }
+
+        findAllFruits();
+
+    })
