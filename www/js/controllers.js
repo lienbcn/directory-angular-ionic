@@ -38,26 +38,26 @@ angular.module('directory.controllers', [])
     })
 
     .controller('FruitIndexCtrl', function ($scope, FruitService) {
-        /*
+        
         $scope.searchKey = "";
 
         $scope.clearSearch = function () {
             $scope.searchKey = "";
-            findAllEmployees();
-        }
+            findAllFruits();
+        };
 
-        $scope.search = function () {
-            EmployeeService.findByName($scope.searchKey).then(function (employees) {
-                $scope.employees = employees;
+        $scope.search = function (oEvent) {
+            FruitService.findByName($scope.searchKey).then(function (aoFruits) {
+                $scope.fruits = aoFruits;
             });
-        }
-        */
+        };
+        
 
         var findAllFruits = function() {
             FruitService.findAll().then(function (aoFruits) {
                 $scope.fruits = aoFruits;
             });
-        }
+        };
 
         findAllFruits();
 

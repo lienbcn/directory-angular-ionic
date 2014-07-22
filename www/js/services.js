@@ -61,7 +61,7 @@ angular.module('directory.services', [])
 
     .factory('FruitService', function($q) {
 
-        var fruits = [
+        var aoFruits = [
             {id: 1, name: 'orange', color: 'orange'},
             {id: 2, name: 'apple', color: 'green'},
             {id: 3, name: 'banana', color: 'yellow'},
@@ -80,27 +80,26 @@ angular.module('directory.services', [])
         return {
             findAll: function() {
                 var deferred = $q.defer();
-                deferred.resolve(fruits);
+                deferred.resolve(aoFruits);
                 return deferred.promise;
             }
-            /*,
+            ,
 
             findById: function(employeeId) {
                 var deferred = $q.defer();
-                var employee = employees[employeeId - 1];
+                var employee = aoFruits[employeeId - 1];
                 deferred.resolve(employee);
                 return deferred.promise;
             },
 
             findByName: function(searchKey) {
                 var deferred = $q.defer();
-                var results = employees.filter(function(element) {
-                    var fullName = element.firstName + " " + element.lastName;
-                    return fullName.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
+                var results = aoFruits.filter(function(oFruit) {
+                    return oFruit.name.toLowerCase().indexOf(searchKey.toLowerCase()) !== -1;
                 });
                 deferred.resolve(results);
                 return deferred.promise;
-            },
+            }/*,
 
             findByManager: function (managerId) {
                 var deferred = $q.defer(),
